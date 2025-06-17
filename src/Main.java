@@ -1,15 +1,17 @@
 public class Main {
     public static void main(String[] args) {
-        int a = 10;
-        int b = 0;
+        String strNum = "123a";
 
         try {
-            int result = a / b;
-            System.out.println("Result: " + result);
-        } catch(ArithmeticException e) {
-            System.out.println(e.getMessage());
+            int num = convertToInt(strNum);
 
-            System.out.println("Error: Division by zero.");
+            System.out.println("변환 결과: " + num);
+        } catch (NumberFormatException e) {
+            System.out.println("숫자 형식 오류!");
         }
+    }
+
+    public static int convertToInt(String s) throws NumberFormatException {
+        return Integer.parseInt(s);
     }
 }
